@@ -29,7 +29,7 @@ def path(count=100):
     print('domain:::::::::',domain)
     res = load(domain, int(count), 10, 0, 'GET', None, 'text/plain', None,quiet=True)
     data =calc_stats(res)
-
+    print(data)
     return render_template('index.html',data=data)
 
 @app.route('/inventory')
@@ -38,6 +38,7 @@ def inventory(count=100):
     domain  =  "http://b-api.ir/testspeed/inventory"
     res = load(domain, int(count), 10, 0, 'GET', None, 'text/plain', None,quiet=True)
     data =calc_stats(res)
+    
     return render_template('index.html',data=data)
 
 
